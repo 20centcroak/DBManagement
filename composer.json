@@ -1,5 +1,5 @@
 { 
-    "name": "Croak-DbManagement/DbManagement", 
+    "name": "croak-dbmanagement/dbmanagement", 
     "description": "a set of php objects and interfaces for a simple use of databases using PDO", 
     "autoload": {
         "psr-4": {"Croak\\": "src"}
