@@ -1,6 +1,16 @@
 { 
-    "name": "croak-dbmanagement/dbmanagement", 
-    "description": "a set of php objects and interfaces for a simple use of databases using PDO", 
+    "name": "croak-dbmanagement/dbmanagement",
+    "type": "library",
+    "description": "a set of php objects and interfaces for a simple use of databases using PDO",
+    "keywords": ["database","pdo"],
+    "homepage": "https://github.com/20centcroak/DBManagement",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vincent Paveau",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {"Croak\\": "src"}
     }
