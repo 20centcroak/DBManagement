@@ -3,11 +3,11 @@ php classes to manage generic databases with pdo
 
 With DbManagement, you just have to implements the DbManagement interface, extends the DbManagementObject and define queries according to the database type and then building tables or queryng is really simple.
 
-use DbManagement thanks to composer : composer require croak-dbmanagement/dbmanagement
+use DbManagement thanks to composer : **composer require croak-dbmanagement/dbmanagement**
 
 The DbManagement interface has to be implemented to deal with different kind of databases and then different syntaxes. The package https://github.com/20centcroak/SqliteDbManagement gives an implementation to deal with sqlite. If you use sqlite, use this package which calls the DbManagement package :
 
-composer require croak-sqlite-dbmanagement/sqlite-dbmanagement
+**composer require croak-sqlite-dbmanagement/sqlite-dbmanagement**
 
 The DbManamgementObject needs the table fields definition. This is done thanks to the 4 constant arrays that should be updated in the class that extends DbManagementObject:
 
