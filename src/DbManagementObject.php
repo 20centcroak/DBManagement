@@ -13,6 +13,11 @@ use Croak\DbManagement\Exceptions\DbManagementException;
  */
 abstract class DbManagementObject{
 
+    const KEYS = array();
+    const KEY_TYPES = array();
+    const KEY_REQUIRED = array();
+    const KEY_UNIQUE = array();
+
     /**
     *@var Array $values values of the object
     */
@@ -91,7 +96,9 @@ abstract class DbManagementObject{
     * These keys should be defined as a constant of the DbManagementObject in array KEYS
     * @return array of String 
     */
-    public abstract function getKeys();
+    public function getKeys(){
+        return $this->KEYS;
+    }
 
     /**
     * getter of Types associated with the keys defining the DbManagementObject
@@ -99,7 +106,9 @@ abstract class DbManagementObject{
     * These types should be defined as a constant of the DbManagementObject in array KEY_TYPES
     * @return array of String 
     */
-    public abstract function getTypes();
+    public function getTypes(){
+        return $this->KEY_TYPES;
+    }
 
     /**
     * getter of the array of boolean defining if the value assosiated with the key is required (true)
@@ -107,7 +116,9 @@ abstract class DbManagementObject{
     * These required keys should be defined as a constant of the DbManagementObject in array KEY_REQUIRED
     * @return array of boolean 
     */
-    public abstract function getRequiredKeys();
+    public function getRequiredKeys(){
+        return $this->KEY_REQUIRED;
+    }
 
     /**
     * getter of the array of boolean defining if the value assosiated with the key should be unique (true)
@@ -115,5 +126,7 @@ abstract class DbManagementObject{
     * These unique keys should be defined as a constant of the DbManagementObject in array KEY_UNIQUE
     * @return array of boolean 
     */
-    public abstract function getUniqueKeys();
+    public function getUniqueKeys(){
+        return $this->KEY_UNIQUE;
+    }
 }
