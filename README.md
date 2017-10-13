@@ -24,7 +24,7 @@ use Croak\DbManagement\DbManagementObject;
 
 class Measure extends DbManagementObject{
 
-    const KEYS = array(
+   const KEYS = array(
         "type"=>"type",
         "unit"=>"unit",
         "value"=>"value",
