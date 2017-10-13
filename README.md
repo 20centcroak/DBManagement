@@ -9,12 +9,14 @@ The DbManagement interface has to be implemented to deal with different kind of 
 
 **composer require croak-sqlite-dbmanagement/sqlite-dbmanagement**
 
-The DbManamgementObject needs the table fields definition. This is done thanks to the 4 constant arrays that should be updated in the class that extends DbManagementObject:
+The DbManamgementObject needs the table fields definition. This is done thanks to 4 constant arrays that should be created in the class that extends DbManagementObject:
 
  - KEYS[key=>value] defines the field names of the table. The field names are all the values of the array. Values are string.
  - KEY_TYPES[key=>type] define the field types associated to the field name thanks to the same key as the array KEYS. It may be one of the function used by php to test variable type (is_string, is_numeric, is_int, is_float, ...). and is then not dependent on the Database syntax. Types are string
  - KEY_REQUIRED[key=>required] define wich fields are required when adding a record in the database. the "required" value is associated with the field name thanks to the same key as the array KEYS. Required are boolean.
  - KEY_UNIQUE[key=>unique] define wich fields have to be unique when adding a record in the database. the "unique" value is associated with the field name thanks to the same key as the array KEYS. Unique are boolean.
+ 
+ abstract setter methods of DbManamgementObject should be filled in to return these constants
  
  here is an example:
  
@@ -60,6 +62,22 @@ class Measure extends DbManagementObject{
         "deviceSn"=>false,
         "date"=>false
     );
+    
+    public function getKeys(){
+        return constant("self::KEYS");
+    }
+
+    public function getTypes(){
+        return constant("self::KEY_TYPES");
+    }
+
+    public function getRequiredKeys(){
+        return constant("self::KEY_REQUIRED");
+    }
+
+    public function getUniqueKeys(){
+        return constant("self::KEY_UNIQUE");
+    }
 }
 `
 
