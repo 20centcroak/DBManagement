@@ -18,7 +18,7 @@ The DbManamgementObject needs the table fields definition. This is done thanks t
  
  here is an example:
  
- <?php
+`<?php
 use Croak\DbManagement\Exceptions\IotException;
 use Croak\DbManagement\DbManagementObject;
 
@@ -60,7 +60,7 @@ class Measure extends DbManagementObject{
         "date"=>false
     );
 }
-?>
+?>`
 
 It is as easy as this!
 
